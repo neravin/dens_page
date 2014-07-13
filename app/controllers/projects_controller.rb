@@ -10,15 +10,18 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @projects = Project.all
   end
 
   # GET /projects/new
   def new
+    @projects = Project.all
     @project = Project.new
   end
 
   # GET /projects/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /projects
@@ -69,6 +72,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description)
+      params.require(:project).permit(:title, :description, :image_url)
     end
 end

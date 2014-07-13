@@ -1,6 +1,12 @@
-<h1>Editing project</h1>
+<%= render 'layouts/projects' %>
 
-<%= render 'form' %>
+<div class="main-part">
+<div class="pseudo">
+  <h1>Editing project</h1>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @project %> |
+  <%= link_to 'Back', projects_path %>
+</div>
+</div>

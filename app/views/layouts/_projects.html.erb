@@ -1,0 +1,17 @@
+<div id = "projects-menu">
+  <div class="pseudo">
+    <h1>Projects</h1>
+      <% if !@projects.nil? %>
+      <% @projects.each do |project| %>
+        <%= link_to(project, class: "a-project") do %>
+        <%= project.title %>
+        <% end %>
+        <%= link_to '', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "right fa fa-trash-o" %>
+        <%= link_to '', edit_project_path(project), :class => "fa fa-pencil right", :style => "margin-right: 10px;" %>
+        <br/>
+      <% end %>
+    <% end %>
+    <br/>
+    <%= link_to 'New Project', new_project_path %>
+  </div><!--/pseudo-->
+</div><!--/projects-menu-->

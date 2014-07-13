@@ -5,10 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body>
-
-<%= yield %>
-
+<body class="<%= controller.controller_name %>">
+  <%= render 'layouts/header' %>
+  <section id = "grid-main">
+    <div id="grid-wrap-menu" class="grid-wrap clearfix">
+      <div class="pseudo">
+        <div class = "pseudo2 clearfix">
+        <%= yield %>
+        </div><!--/pseudo2-->
+      </div><!--/pseudo-->
+    </div><!--/grid-main-->
+  </section><!--/grid-wrap-->
+  <%= render 'layouts/footer' %>
 </body>
 </html>
