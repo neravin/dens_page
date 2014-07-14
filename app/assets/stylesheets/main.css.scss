@@ -129,7 +129,8 @@ table thead tr td{
   }
 }
 
-#projects-menu{
+#right-panel{
+  position: relative;
   width: 20%;
   float: right;
   line-height: 1.2em;
@@ -141,6 +142,10 @@ table thead tr td{
     padding-top: 0px;
   }
 }
+#projects-menu, #budget-menu{
+  width: 100%;
+  margin-bottom: 20px;
+}
 .main-part{
   .pseudo{
     margin-right: 20px;
@@ -149,4 +154,18 @@ table thead tr td{
   h1{
     font-size: 3em;
   }
+}
+
+.main-part{
+  .pseudo{
+    position: relative;
+  }
+}
+.name-on-image{
+  position: absolute;
+  top: 0;
+  left: -15px;
+  padding-left: 30px; 
+  width: 102%;
+  margin-right: 15px;
 }

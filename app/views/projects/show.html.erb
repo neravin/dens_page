@@ -1,22 +1,36 @@
-<%= render 'layouts/projects' %>
+<div id = "right-panel">
+  <%= render 'layouts/projects' %>
+  <%= render 'layouts/budget' %>
+</div>
 
 <div class="main-part">
 <div class="pseudo">
-  <h1>
-    <%= @project.title %>
-  </h1>
-  
   <% if (!@project.image_url.nil? && @project.image_url != '' )  %>
+    <h1 class = "name-on-image">
+      <%= @project.title %>
+    </h1>
+    <br><br><br><br><br>
     <p>
       <%= image_tag(@project.image_url, class: 'list_image') %>
     </p>
+  <% else %>
+    <h1>
+      <%= @project.title %>
+    </h1>
   <% end %>
 
+  <p><%= @project.description %></p>
+  <br>
+  
   <p>
-    <%= @project.description %>
+  <% if (!@project.site.nil? && @project.site != '' )  %>
+    <%= link_to("http://www."+@project.site) do %>
+      <%= @project.site %>
+    <% end %>
+  <% end %>
   </p>
 
-  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Edit', edit_project_path(@project) %> 
   <%= link_to 'Back', projects_path %>
 </div>
 </div>

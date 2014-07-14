@@ -83,21 +83,33 @@ h1, h2, h3, h4, h5, h6{
   color: white;
 }
 
-#projects-menu{
+#projects-menu, #budget-menu{
   background: $dark-blue;
   color: $light-blue;
   h1{
     color: white;
   }
-  a{
+  a, em, span{
     color: white;
   }
   .a-project{
     color: $light-blue;
   }
 }
+
 .main-part{
   h1{
     color: #007095;
+  }
+}
+
+
+.main-part{
+  h1.name-on-image{
+    color: white;
+  }
+  .name-on-image{
+    background: $dark-blue;
+    background: rgba(0, 112, 149, 0.6);
   }
 }
