@@ -27,6 +27,23 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+
+  <%= f.fields_for :services do |builder| %>
+  <fieldset>
+    <%= builder.label :name, "Service" %>
+    <%= builder.text_field :name %><br>
+
+    <%= builder.label :price, "Price" %>
+    <%= builder.text_field :price %><br>
+
+    <%= builder.check_box :_destroy %>
+    <%= builder.label :_destroy, "Remove Service"%>
+      
+  </fieldset>
+  <% end %>
+  <%= link_to_add_fields "Add Service", f, :services %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

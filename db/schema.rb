@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714105946) do
+ActiveRecord::Schema.define(version: 20140715071222) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(version: 20140714105946) do
     t.datetime "updated_at"
     t.string   "image_url"
     t.string   "site"
+  end
+
+  create_table "projects_services", id: false, force: true do |t|
+    t.integer "project_id", null: false
+    t.integer "service_id", null: false
+  end
+
+  add_index "projects_services", ["project_id"], name: "index_projects_services_on_project_id"
+  add_index "projects_services", ["service_id"], name: "index_projects_services_on_service_id"
+
+  create_table "services", force: true do |t|
+    t.string  "name"
+    t.decimal "price",      precision: 8, scale: 2
+    t.date    "start_date"
+    t.date    "end_date"
   end
 
 end
