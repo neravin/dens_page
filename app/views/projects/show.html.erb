@@ -1,21 +1,40 @@
+<h1>
+  <%= @project.title %>
+</h1>
 <div id = "right-panel">
   <%= render 'layouts/budget' %>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Start date</td>
+        <td>End date</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @project.services.each do |service| %>
+        <tr>
+          <td><%= service.name %></td>
+          <td><%= service.price %></td>
+          <td><%= service.start_date.strftime("%B %d, %Y") %></td>
+          <td><%= service.end_date.strftime("%B %d, %Y") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <div class="main-part">
 <div class="pseudo">
   <% if (!@project.image_url.nil? && @project.image_url != '' )  %>
-    <h1 class = "name-on-image">
-      <%= @project.title %>
-    </h1>
-    <br><br><br><br>
+    <br>
     <p>
       <%= image_tag(@project.image_url, class: 'list_image') %>
     </p>
   <% else %>
-    <h1>
-      <%= @project.title %>
-    </h1>
+    
   <% end %>
 
   <p><%= @project.description %></p>

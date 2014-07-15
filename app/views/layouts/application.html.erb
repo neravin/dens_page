@@ -5,8 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
+<ul class="cbp-vimenu">
+        <li><a href="#" class="icon-logo">Logo</a></li>
+        <li><a href="#" class="icon-projects"></a></li>
+        <li><a href="#" class="icon-links">Search</a></li>
+        <!-- Example for active item:
+        <li class="cbp-vicurrent"><a href="#" class="icon-pencil">Pencil</a></li>
+        -->
+
+
+      </ul>
 <body class="<%= controller.controller_name %>">
   <%= render 'layouts/header' %>
   <section id = "grid-main">

@@ -30,6 +30,7 @@ header{
 
 body{
   background: #f1f4f9;
+  background: white;
   //background: $light-green-strong;
   //background-image: url(trianglify-background.png);
   //background: rgb(126, 215, 205);
@@ -57,10 +58,23 @@ p, tr{
 thead tr{
   color: white;
   color: $middle-green;
+
+  background-color: #31bc86;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
   //font-size: 0.9em;
 }
 
+tbody tr{
+  transition: all .125s ease-in-out;
+  background: white;
+}
 
+tbody tr:nth-child(2n-1) {
+  background-color: #f5f5f5;
+  transition: all .125s ease-in-out;
+}
 
 label{
   color: $dark-blue;
@@ -112,4 +126,8 @@ h1, h2, h3, h4, h5, h6{
     background: $dark-blue;
     background: rgba(0, 112, 149, 0.8);
   }
+}
+
+h1{
+  color: #8A8A8A;
 }

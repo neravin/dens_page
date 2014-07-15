@@ -14,6 +14,7 @@
  *= require nervs_framework
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 /*@font-face {
     font-family: 'alex_brushregular';

@@ -37,9 +37,15 @@
     <%= builder.label :price, "Price" %>
     <%= builder.text_field :price %><br>
 
+    <%= builder.label :start_date, "Start date" %>
+    <%= builder.date_field :start_date %><br>
+
+    <%= builder.label :start_date, "End date" %>
+    <%= builder.date_field :end_date %>
+
     <%= builder.check_box :_destroy %>
     <%= builder.label :_destroy, "Remove Service"%>
-      
+    
   </fieldset>
   <% end %>
   <%= link_to_add_fields "Add Service", f, :services %>
