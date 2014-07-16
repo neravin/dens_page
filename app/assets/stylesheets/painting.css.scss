@@ -6,11 +6,11 @@ header{
 
 .middle_green{
   //background: linear-gradient(to top, $middle-green, $light-green);
-  background: $middle-green;
+  background: $light-green;
   color: white;
   border: 1px solid rgba(0, 0, 0, 0);
   &:hover{
-    background: $light-green;
+    background: $middle-green;
   };
 }
 

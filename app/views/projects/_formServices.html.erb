@@ -1,21 +1,20 @@
 <div class = "table">
-  <%= f.fields_for :services do |builder| %>
-    <fieldset>
-      <div class="row">
-        <div class="col"><%= builder.label :name, "Service" %></div>
-        <div class="col"><%= builder.label :name, "Price" %></div>
-        <div class="col"><%= builder.label :start_date, "Start date" %></div>
-        <div class="col"><%= builder.label :start_date, "End date" %></div>
-        <div class="col remove"><%= builder.label :_destroy, "Remove"%></div>
-      </div><!--/row-->
-
+  <fieldset>
+    <div class="row">
+      <div class="col"><label>Service</label></div>
+      <div class="col"><label>Price</label></div>
+      <div class="col"><label>Start date</label></div>
+      <div class="col"><label>End date</label></div>
+      <div class="col remove"><label>Remove</label></div>
+    </div><!--/row-->
+    <%= f.fields_for :services do |builder| %>
       <div class="row">
         <div class="col"><%= builder.text_field :name %></div>
         <div class="col"><%= builder.text_field :price %></div>
         <div class="col"><%= builder.date_field :start_date %></div>
         <div class="col"><%= builder.date_field :end_date %></div>
-        <div class="col remove"><%= builder.check_box :_destroy %></div>
+        <div class="col remove small-in-table"><%= builder.check_box :_destroy %></div>
       </div><!--/row-->
-    </fieldset>
-  <% end %>
+    <% end %>
+  </fieldset>
 </div><!--/div-table-->

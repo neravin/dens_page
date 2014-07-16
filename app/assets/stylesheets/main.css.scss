@@ -4,6 +4,7 @@
   /*padding: 30px;*/
   padding-bottom: 20px;
   padding-top: 70px;
+  margin-bottom: 50px;
   .pseudo{
     //padding-left: 15px;
   }
@@ -207,6 +208,9 @@ h1{
 .remove{
   width: 70px;
 }
+.small-in-table{
+  margin-top: 0.6em;
+}
 
 .left-project{
   width: 20%;
@@ -216,4 +220,8 @@ h1{
 .right-services{
   width: 80%;
   float: right;
+}
+
+.margin10{
+  margin: 10px;
 }

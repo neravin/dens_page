@@ -1,8 +1,55 @@
 
-  <h1>Editing project</h1>
+<h1>Editing project</h1>
 
-  <%= render 'form' %>
-<div class="left">
-  <%= link_to 'Show', @project %> |
-  <%= link_to 'Back', projects_path %>
-</div>
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="left-project">
+    <div class="field">
+      <%= f.label :category %><br>
+      <%= f.text_field :category %>
+    </div>
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :image_url %><br>
+      <%= f.text_field :image_url %>
+    </div>
+    <div class="field">
+      <%= f.label :site %><br>
+      <%= f.text_field :site %><br>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+  </div><!--/left-project-->
+
+  <div class="right-services">
+    <%= render 'formServices', f: f %>
+    <%= link_to_add_fields "", f, :services %>
+  </div><!--/right-services-->
+
+  <div class="actions ">
+    
+  </div>
+
+<ul class = "cbp-vimenu vimenu-bottom">
+  <li><%= link_to 'Back', projects_path, class: "icon-back" %></li>
+  <li><%= link_to 'Show', @project, class: "icon-show" %></li>
+  <li><%= f.submit :class => "button middle_green margin10" %></li>
+</ul>
+<% end %>
+
