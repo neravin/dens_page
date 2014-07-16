@@ -188,3 +188,32 @@ h1{
   }
   
 }
+
+.table{
+  display:table;         
+  width:auto;         
+}
+.row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;         
+  width:200px;         
+}
+
+.remove{
+  width: 70px;
+}
+
+.left-project{
+  width: 20%;
+  float: left;
+}
+
+.right-services{
+  width: 80%;
+  float: right;
+}

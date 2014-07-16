@@ -1,8 +1,24 @@
-<fieldset>
-  <%= f.label :name, "Service" %>
-  <%= f.text_field :name %><br>
-  <%= f.label :price, "Service" %>
-  <%= f.text_field :price %><br>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
-</fieldset>
+
+
+<div class = "table">
+  <fieldset>
+    <div class="row">
+      <div class="col"><%= f.label :name, "Service" %></div>
+      <div class="col"><%= f.label :name, "Price" %></div>
+      <div class="col"><%= f.label :start_date, "Start date" %></div>
+      <div class="col"><%= f.label :start_date, "End date" %></div>
+      <div class="col remove"><%= f.hidden_field :_destroy %></div>
+    </div><!--/row-->
+
+    <div class="row">
+      <div class="col"><%= f.text_field :name %></div>
+      <div class="col"><%= f.text_field :price %></div>
+      <div class="col"><%= f.date_field :start_date %></div>
+      <div class="col"><%= f.date_field :end_date %></div>
+      <div class="col remove">
+        <%= f.hidden_field :_destroy %>
+        <%= link_to "remove", '#', class: "remove_fields" %>
+      </div>
+    </div><!--/row-->
+  </fieldset>
+</div><!--/div-table-->

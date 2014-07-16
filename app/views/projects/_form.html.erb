@@ -11,48 +11,33 @@
     </div>
   <% end %>
 
+  <div class="left-project">
+    <div class="field">
+      <%= f.label :category %><br>
+      <%= f.text_field :category %>
+    </div>
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :image_url %><br>
+      <%= f.text_field :image_url %>
+    </div>
+    <div class="field">
+      <%= f.label :site %><br>
+      <%= f.text_field :site %><br>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+  </div><!--/left-project-->
 
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :site %><br>
-    <%= f.text_field :site %><br>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+  <div class="right-services">
+    <%= render 'formServices', f: f %>
+  </div><!--/right-services-->
 
-
-  <%= f.fields_for :services do |builder| %>
-  <fieldset>
-    <%= builder.label :name, "Service" %>
-    <%= builder.text_field :name %><br>
-
-    <%= builder.label :price, "Price" %>
-    <%= builder.text_field :price %><br>
-
-    <%= builder.label :start_date, "Start date" %>
-    <%= builder.date_field :start_date %><br>
-
-    <%= builder.label :start_date, "End date" %>
-    <%= builder.date_field :end_date %>
-
-    <%= builder.check_box :_destroy %>
-    <%= builder.label :_destroy, "Remove Service"%>
-    
-  </fieldset>
-  <% end %>
   <%= link_to_add_fields "Add Service", f, :services %>
 
   <div class="actions">
