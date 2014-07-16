@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-
+    # флаги дат, есть ли хотя бы ожна дата в таблице
+    @have_start_date = false;
+    @have_end_date = false;
   end
 
   # GET /projects/new

@@ -18,10 +18,34 @@
         <tr>
           <td><%= service.name %></td>
           <td><%= service.price %></td>
-          <td><% if !service.start_date.nil? %><%= service.start_date.strftime("%B %d, %Y") %><% end %></td>
-          <td><% if !service.end_date.nil? %><%= service.end_date.strftime("%B %d, %Y") %><% end %></td>
+          <td>
+            <% if !service.start_date.nil? %>
+              <%= service.start_date.strftime("%d %B %Y") %>
+              <% @have_start_date = true %>
+            <% end %>
+          </td>
+          <td>
+            <% if !service.end_date.nil? %>
+              <%= service.end_date.strftime("%d %B %Y") %>
+              <% @have_end_date = true %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
+      <tr>
+        <td>Итого: </td>
+        <td><%= @project.services.sum("services.price") %></td>
+        <td>
+          <% if @have_start_date %>
+            <%= @project.services.minimum("services.start_date").strftime("%d %B %Y") %>
+          <% end %>
+        </td>
+        <td>
+          <% if @have_end_date %>
+            <%= @project.services.maximum("services.end_date").strftime("%d %B %Y") %>
+          <% end %>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
