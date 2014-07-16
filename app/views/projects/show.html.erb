@@ -18,8 +18,8 @@
         <tr>
           <td><%= service.name %></td>
           <td><%= service.price %></td>
-          <td><%= service.start_date.strftime("%B %d, %Y") %></td>
-          <td><%= service.end_date.strftime("%B %d, %Y") %></td>
+          <td><% if !service.start_date.nil? %><%= service.start_date.strftime("%B %d, %Y") %><% end %></td>
+          <td><% if !service.end_date.nil? %><%= service.end_date.strftime("%B %d, %Y") %><% end %></td>
         </tr>
       <% end %>
     </tbody>
