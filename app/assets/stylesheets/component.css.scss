@@ -74,6 +74,10 @@
   content: "\f190";
 }
 
+.icon-book:before{
+  content: "\f02d"
+}
+
 /* Example for media query (depends on total height of menu) */
 @media screen and (max-height: 34.9375em) { 
 
