@@ -1,6 +1,6 @@
 @import "function";
 
-.button {
+.button, select {
   text-decoration: none;
   padding: 1em;   /* 16/16px */
   text-transform: uppercase;
@@ -13,7 +13,7 @@
 
 
 
-input:not([type=submit]):not([type=file]){
+input:not([type=submit]):not([type=file]), select{
     border: em(3) solid #1b967e; 
     border-radius: em(10);
     padding: em(10);
